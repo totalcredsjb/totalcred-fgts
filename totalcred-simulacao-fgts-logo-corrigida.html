@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#062b1b">
+  <title>Totalcred | Simulação FGTS</title>
+  <style>
+    :root {
+      --green: #062b1b;
+      --green-2: #0b3d28;
+      --gold: #d8b45b;
+      --gold-light: #f2df9f;
+      --cream: #f8f5ed;
+      --muted: #c9c8bf;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--cream);
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(ellipse at top, rgba(216,180,91,.12), transparent 42%),
+        linear-gradient(160deg, #10120f 0%, #071c12 48%, #030806 100%);
+      min-height: 100vh;
+    }
+    .wrap { width: min(100% - 32px, 720px); margin: 0 auto; padding: 28px 0 34px; }
+    header { text-align: center; padding: 10px 8px 28px; }
+    .brand-mark {
+      width: 88px; height: 74px; display: grid; place-items: center;
+      margin: 0 auto 13px;
+    }
+    .brand-mark svg { display: block; width: 100%; height: 100%; overflow: visible; }
+    .brand { font-size: clamp(28px, 6vw, 38px); letter-spacing: .02em; font-weight: 700; color: var(--cream); }
+    .brand span { color: var(--gold); }
+    .subbrand { margin-top: 7px; font-size: 11px; letter-spacing: .25em; color: #ded7c4; }
+    .rule { width: 90px; height: 1px; background: var(--gold); margin: 18px auto 0; }
+    h1 { margin: 0 0 12px; font-size: clamp(28px, 5.6vw, 42px); line-height: 1.12; font-weight: 650; }
+    .intro { text-align: center; color: var(--muted); line-height: 1.7; font-size: 16px; margin: 0 auto 27px; max-width: 560px; }
+    .panel {
+      border: 1px solid rgba(216,180,91,.48);
+      border-radius: 22px; padding: clamp(20px, 5vw, 30px);
+      background: linear-gradient(145deg, rgba(31,34,25,.92), rgba(16,20,15,.94));
+      box-shadow: 0 18px 55px rgba(0,0,0,.24);
+    }
+    .notice-title { color: var(--gold-light); font-size: 18px; font-weight: 700; line-height: 1.5; margin: 0 0 10px; }
+    .notice-copy { color: #e4e1d8; font-size: 16px; line-height: 1.65; margin: 0 0 18px; }
+    .authorization-list { display: grid; gap: 10px; }
+    .bank-name {
+      border: 1px solid rgba(216,180,91,.52); border-radius: 12px;
+      background: rgba(5,39,24,.62); color: var(--gold-light);
+      padding: 16px 15px; font-weight: 750; font-size: clamp(15px, 3.6vw, 18px);
+      line-height: 1.4; letter-spacing: .015em; overflow-wrap: anywhere;
+    }
+    .after-note { text-align: center; color: #c8c7bd; line-height: 1.65; margin: 24px 8px 18px; font-size: 15px; }
+    .buttons { display: grid; gap: 13px; }
+    .button {
+      display: block; text-decoration: none; text-align: center; border-radius: 15px;
+      padding: 20px 14px; color: #15170f; font-size: 19px; font-weight: 800;
+      letter-spacing: .015em; background: linear-gradient(115deg, #cda64b, #f4dfa0 52%, #d9b85f);
+      border: 1px solid #f4df9d; box-shadow: 0 7px 18px rgba(0,0,0,.23);
+      transition: transform .15s ease, filter .15s ease;
+    }
+    .button span { display: block; font-size: 13px; font-weight: 500; margin-top: 6px; color: #39301b; }
+    .button:hover { transform: translateY(-2px); filter: brightness(1.04); }
+    .whatsapp {
+      display: block; text-align: center; margin-top: 14px; padding: 16px;
+      border-radius: 14px; border: 1px solid #658c75; background: #123b2b;
+      color: #f6f5ed; text-decoration: none; font-weight: 700; font-size: 16px;
+    }
+    .disclaimer { color: #aead9f; font-size: 12px; line-height: 1.7; text-align: center; margin: 22px 8px 0; }
+    footer { text-align: center; color: #8d9186; font-size: 12px; padding-top: 28px; }
+    @media (min-width: 600px) { .buttons { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header aria-label="Totalcred">
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 120 100" role="img" aria-label="Monograma Totalcred">
+          <defs>
+            <linearGradient id="totalcredGold" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#f7e4a3"/>
+              <stop offset=".48" stop-color="#c79627"/>
+              <stop offset="1" stop-color="#f2d77c"/>
+            </linearGradient>
+          </defs>
+          <path d="M92 19 A42 42 0 1 0 92 81" fill="none" stroke="url(#totalcredGold)" stroke-width="10" stroke-linecap="round"/>
+          <path d="M31 31 H91 L81 43 H68 V76 H53 V43 H41 Z" fill="#f8f3e7"/>
+        </svg>
+      </div>
+      <div class="brand">Total<span>cred</span></div>
+      <div class="subbrand">SOLICITAÇÕES DE CRÉDITO</div>
+      <div class="rule"></div>
+    </header>
+
+    <section aria-labelledby="title">
+      <h1 id="title" style="text-align:center">Simulação FGTS</h1>
+      <p class="intro">Consulte as opções de antecipação do seu FGTS e compare as condições disponíveis para você.</p>
+
+      <div class="panel">
+        <p class="notice-title">Antes de fazer a simulação, atenção!</p>
+        <p class="notice-copy">
+          Abra o aplicativo FGTS e autorize os nomes abaixo para que as instituições possam consultar seu saldo e realizar a simulação:
+        </p>
+        <div class="authorization-list" aria-label="Nomes para autorizar no aplicativo FGTS">
+          <div class="bank-name">BMP SOCIEDADE DE CRÉDITO S.A.</div>
+          <div class="bank-name">J17</div>
+          <div class="bank-name">QI SOCIEDADE DE CRÉDITO S.A.</div>
+        </div>
+      </div>
+
+      <p class="after-note">Depois de autorizar os nomes acima no aplicativo FGTS, escolha uma opção para iniciar sua simulação.</p>
+
+      <div class="buttons">
+        <a class="button" href="https://link.icred.app/L3ZTROC" target="_blank" rel="noopener noreferrer">
+          SIMULAR NO BANCO 1
+          <span>Toque aqui para consultar sua opção</span>
+        </a>
+        <a class="button" href="https://auto-contratacao.hubcredito.com.br/leticia-campos-da-silva" target="_blank" rel="noopener noreferrer">
+          SIMULAR NO BANCO 2
+          <span>Toque aqui para consultar uma segunda opção</span>
+        </a>
+      </div>
+
+      <a class="whatsapp" href="https://wa.me/5516991471918" target="_blank" rel="noopener noreferrer">
+        Ficou com dúvidas? Fale com a Totalcred pelo WhatsApp
+      </a>
+
+      <p class="disclaimer">
+        Você pode consultar as duas opções para comparar as condições. A simulação não garante aprovação.
+        A contratação e as condições dependem da análise de cada instituição. Nunca faça pagamentos antecipados
+        para liberar crédito.
+      </p>
+    </section>
+    <footer>© Totalcred Solicitações de Crédito</footer>
+  </main>
+</body>
+</html>
